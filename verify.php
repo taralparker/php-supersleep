@@ -1,18 +1,20 @@
 <?php
+//Attempt connection to Super_Sleep database.
 $con=mysqli_connect("localhost", "root", "" , "Super_Sleep");
-// Check connection
+
+// Check if the connection attempt was successful.
 if (mysqli_connect_errno())
 {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-$username_submit = $_REQUEST[username];
-$password_submit = $_REQUEST[password];
+//Search the database for an entry with the entered username and corresponding password.
+$submission = mysqli_query($con,"SELECT username, password FROM login
+WHERE username=$_POST[username] and password = $_POST[password]");
 
-if(mysqli_query($con,"SELECT username FROM login WHERE username=$username_submit")
-    and mysqli_query($con,"SELECT password FROM login WHERE password=$password_submit"))
+//If there is an entry that fits the criteria, then go to the Manage Account page, else go to the Login Failed page.
+if($submission)
 {
-    //Replace with account homepage
     $url = 'manageAccount.html';
     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 }
@@ -22,5 +24,6 @@ else
     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 }
 
+//Close the database connection.
 mysqli_close($con);
 ?>
