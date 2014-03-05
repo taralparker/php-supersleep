@@ -6,12 +6,32 @@
 	2)it should allow a user to change their password
 	3)it should allow a user to return to the main page-->
 
+
 <html>
-	<head>
-		<title>Account Management</title>
-	</head>
-	<body bgcolor="#FFCC99">
-		<h1>Welcome to Super Sleep [Account Management]</h1>
-        <a href="ChangePassword.php">Login</a>
-	</body>
+<head>
+    <title>Account Management</title>
+</head>
+<body bgcolor="#FFDB94">
+<h1>Welcome to Super Sleep [Change Password]</h1>
+
+
+
+<div id="menu" style="background-color:#E6C585;height:200px;width:500px;float:left;">
+    <form action="changePassword.php" method="post">
+        Username: <input type="text" name="usernameField"><br>
+        Old Password: <input type="text" name="oldPassword"><br>
+        Password: <input type="text" name="password1"><br>
+        Password: <input type="text" name="password2"><br>
+        <input type="submit">
+    </form>
+</div>
+
+
+
+
+
+
+
+</body>
 </html>
+

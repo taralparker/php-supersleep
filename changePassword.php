@@ -1,19 +1,11 @@
-<?php
-$name="Tara";
-?>
-<!----My name is <?php echo $name; ?>----->
+<!--
+	Page compiled by Matthew Webster
+	This page can be linked only after a successful login.
+	1)if a user is not logged in, it should display an error
+	2)it should allow a user to change their password
+	3)it should allow a user to return to the main page-->
 
-<form name="form" action="" method="get">
-    <label for="password">Password</label>
-    <input type="text" name="password" id="password" value="">
-    <br>
-    <label for="passwordConfirm">Confirm Password</label>
-    <input type="text" name="passwordConfirm" id="passwordConfirm" value="">
-    <input type="submit" value="Change Password" >
-</form>
 
-<?php echo $_GET['password']; ?>
-<?php echo $_GET['passwordConfirm']; ?>
 
 <!-- modify a password
 
@@ -24,23 +16,43 @@ $name="Tara";
 
 <?php
 
-//COMPARE PASSWORDS FIRST
-if($password == $passwordConfirm)
-{
-	$con=mysqli_connect("localhost", "root", "" , "Super_Sleep");
-	// Check connection
-	if (mysqli_connect_errno())
-	{
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
-	echo "login successful";
-	//needs to modify, not insert (replace?)
-	//mysqli_query($con,"REPLACE INTO login (name, password)
-	//VALUES ('{$_GET['password']}', '{$_GET['passwordConfirm']}')") or die(mysqli_error($con));
+$oldUsername = $_POST['oldUsername'];
+$passwordOld = $_POST['passwordOld'];
+$passwordFirst = $_POST['password1'];
+$passwordSecond = $_POST['password2'];
 
-	//mysqli_query($con,"SELECT * FROM login ");
-	mysqli_close($con);
-}
-else echo "passwords did not match";
+//COMPARE PASSWORDS
+    if(strcasecmp($passwordFirst, $passwordSecond)==0)
+    {
+        //connect to the server
+        $con=mysqli_connect("localhost", "root", "" , "super_sleep");
+        // Check connection
+        if (mysqli_connect_errno())
+        {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+        echo "passwords matched!";
 
+        //VERIFY USERNAME = OLD PASSWORD BEFORE UPDATING
+
+
+
+
+        //update password - VARCHARs need to be surrounded in single quotes
+
+        $sql = "UPDATE login SET password='$passwordFirst' WHERE username='$oldUsername'";
+
+        //try command
+        if(!mysqli_query($con,$sql))
+        {
+            die('sql error');
+        }
+        else echo "successful modification";
+
+        //mysqli_query($con,"SELECT * FROM login ");
+
+
+        mysqli_close($con);
+    }
+    else echo "passwords did not match\n";
 ?>
