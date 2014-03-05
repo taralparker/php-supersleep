@@ -1,27 +1,15 @@
 <!--
 	Page compiled by Matthew Webster
-	This page can be linked only after a successful login.
-	1)if a user is not logged in, it should display an error
-	2)it should allow a user to change their password
-	3)it should allow a user to return to the main page-->
-
-
-
-<!-- modify a password
-
-***Connecting with root seems dangerous!
-
- -->
-
+-->
 
 <?php
 
-$oldUsername = $_POST['oldUsername'];
-$passwordOld = $_POST['passwordOld'];
+$oldUsername = $_POST['usernameField'];
+$passwordOld = $_POST['oldPassword'];
 $passwordFirst = $_POST['password1'];
 $passwordSecond = $_POST['password2'];
 
-//COMPARE PASSWORDS
+//verify new passwords match.
     if(strcasecmp($passwordFirst, $passwordSecond)==0)
     {
         //connect to the server
@@ -31,28 +19,30 @@ $passwordSecond = $_POST['password2'];
         {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
-        echo "passwords matched!";
+        //echo "passwords matched!";
 
-        //VERIFY USERNAME = OLD PASSWORD BEFORE UPDATING
+        //Search the database for an entry with the entered username and corresponding password.
+        $username_query = mysqli_query($con,"SELECT username,password FROM login WHERE username='$oldUsername'");
 
+        //Get the results of the query into an array.
+        $row = mysqli_fetch_array($username_query);
 
+        //If there is an entry that fits the criteria, then go to the Manage Account page, else go to the Login Failed page.
 
-
-        //update password - VARCHARs need to be surrounded in single quotes
-
-        $sql = "UPDATE login SET password='$passwordFirst' WHERE username='$oldUsername'";
-
-        //try command
-        if(!mysqli_query($con,$sql))
+        if(strcasecmp($passwordOld,$row[1])==0)
         {
-            die('sql error');
+            $sql = "UPDATE login SET password='$passwordFirst' WHERE username='$oldUsername'";
+
+            //try command
+            if(!mysqli_query($con,$sql))
+            {
+                die('sql error');
+            }
+            else echo "Password Changed Successfully.";
         }
-        else echo "successful modification";
-
-        //mysqli_query($con,"SELECT * FROM login ");
-
-
+        else echo "Username and Password did not match.";
+        //close database connection
         mysqli_close($con);
     }
-    else echo "passwords did not match\n";
+    else echo "New Passwords did not match.";
 ?>
