@@ -27,13 +27,13 @@ $passwordSecond = $_POST['password2'];
         //Get the results of the query into an array.
         $row = mysqli_fetch_array($username_query);
 
-        //compare the "old" password against the database
+        //If there is an entry that fits the criteria, then go to the Manage Account page, else go to the Login Failed page.
 
         if(strcasecmp($passwordOld,$row[1])==0)
         {
             $sql = "UPDATE login SET password='$passwordFirst' WHERE username='$oldUsername'";
 
-            //try to update the database
+            //try command
             if(!mysqli_query($con,$sql))
             {
                 die('sql error');

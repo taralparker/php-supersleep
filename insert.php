@@ -1,7 +1,6 @@
 <?php
 /**
- * Created using PhpStorm.
- * User: Tara
+ * Author: Tara
  * Date: 3/3/14
  * Time: 3:52 PM
  */
@@ -23,7 +22,9 @@ VALUES
 // Check for errors including duplicate entries (e.g. an attempt to create a username that is already in use)
 if (!mysqli_query($con,$sql))
 {
+    echo "<a href=createaccount.html>Create New Account</a><br>";
     die('Username is already taken. Please try again.');
+
 }
 
 // If the username and password are valid, confirm and send to user profile.
