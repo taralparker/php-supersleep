@@ -24,7 +24,7 @@
 
         <br>
         <!--- Link to the Create Account page, activated by the user clicking on the displayed link. --->
-        If you do not have already have an account then click <a href="CreateAccount.php">here</a>
+        If you do not have already have an account then click <a href="createaccount.php">here</a>
         to go to the Create Account page.
     </body>
 </html>
