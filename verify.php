@@ -14,7 +14,7 @@ $username_query = mysqli_query($con,"SELECT username,password FROM login WHERE u
 //Get the results of the query into an array.
 $row = mysqli_fetch_array($username_query);
 
-//If there is an entry that fits the criteria, then go to the Manage Account page, else go to the Login Failed page.
+//If there is an entry that fits the criteria, then go to the User Profile page, else go to the Login Failed page.
 if(strcasecmp($_POST[password],$row[1])==0)
 {
     $url = 'userprofile.html';
@@ -22,7 +22,7 @@ if(strcasecmp($_POST[password],$row[1])==0)
 }
 else
 {
-    $url = 'login_fail.php';
+    $url = 'login_fail.html';
     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';;
 }
 
