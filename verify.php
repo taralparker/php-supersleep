@@ -22,7 +22,7 @@ if(strcasecmp($_POST[password],$row[1])==0)
 }
 else
 {
-    $url = 'login_fail.html';
+    $url = 'loginfail.html';
     echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';;
 }
 
