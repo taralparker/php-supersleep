@@ -23,7 +23,8 @@ include_once 'includes/functions.php';
 set or if the registration script caused an error. -->
 <h1>Register with us</h1>
 <?php
-if (!empty($error_msg)) {
+if (!empty($error_msg))
+{
     echo $error_msg;
 }
 ?>

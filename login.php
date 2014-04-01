@@ -11,9 +11,12 @@ include_once 'includes/functions.php';
 
 sec_session_start();
 
-if (login_check($mysqli) == true) {
+if (login_check($mysqli) == true)
+{
     $logged = 'in';
-} else {
+}
+else
+{
     $logged = 'out';
 }
 ?>
@@ -27,7 +30,8 @@ if (login_check($mysqli) == true) {
 </head>
 <body>
 <?php
-if (isset($_GET['error'])) {
+if (isset($_GET['error']))
+{
     echo '<p class="error">Error Logging In!</p>';
 }
 ?>

@@ -31,30 +31,29 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // Username validity and password validity have been checked client side.
     // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
-    //
 
     $prep_stmt = "SELECT id FROM members WHERE email = ? LIMIT 1";
     $stmt = $mysqli->prepare($prep_stmt);
 
-    if ($stmt) {
+    if ($stmt)
+    {
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $stmt->store_result();
 
-        if ($stmt->num_rows == 1) {
+        if ($stmt->num_rows == 1)
+        {
             // A user with this email address already exists
             $error_msg .= '<p class="error">A user with this email address already exists.</p>';
         }
-    } else {
+    }
+    else
+    {
         $error_msg .= '<p class="error">Database error</p>';
     }
 
-    // TODO:
-    // We'll also have to account for the situation where the user doesn't have
-    // rights to do registration, by checking what type of user is attempting to
-    // perform the operation.
-
-    if (empty($error_msg)) {
+    if (empty($error_msg))
+    {
         // Create a random salt
         $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), TRUE));
 
@@ -62,10 +61,12 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         $password = hash('sha512', $password . $random_salt);
 
         // Insert the new user into the database
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)")) {
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)"))
+        {
             $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
             // Execute the prepared query.
-            if (! $insert_stmt->execute()) {
+            if (! $insert_stmt->execute())
+            {
                 header('Location: ../error.php?err=Registration failure: INSERT');
             }
         }
