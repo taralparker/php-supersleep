@@ -15,7 +15,7 @@ sec_session_start();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Secure Login: Protected Page</title>
+    <title>Super Sleep</title>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -26,7 +26,7 @@ sec_session_start();
         <meta charset="UTF-8" />
         <meta name="google" content="notranslate">
         <meta http-equiv="Content-Language" content="en" />
-        <title></title>
+        <title>Super Sleep</title>
 
         <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 

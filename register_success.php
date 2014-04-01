@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Secure Login: Registration Success</title>
+        <title>Super Sleep: Registration Success</title>
         <link rel="stylesheet" href="styles/main.css" />
     </head>
     <body>

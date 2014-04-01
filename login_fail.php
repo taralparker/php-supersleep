@@ -10,6 +10,7 @@
 
 <html>
 <head>
+    <title>Super Sleep</title>
     Login Failed!
     <!--- Convey that the login failed with the submitted parameters. --->
 </head>

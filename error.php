@@ -17,7 +17,7 @@ if (! $error)
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Secure Login: Error</title>
+    <title>Super Sleep: Error</title>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
