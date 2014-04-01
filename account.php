@@ -65,7 +65,7 @@ sec_session_start();
             </div>
         </div>
         <div id="footer">
-            <p>Developed by Tara Parker, Christopher Reynolds, Matthew Webster.
+            <p>Developed by Tara Parker, Christopher Reynolds, Matthew Webster. Design by FreeCSSTemplates.org.
         </div>
     </div>
     </body>
