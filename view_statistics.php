@@ -96,7 +96,7 @@ sec_session_start();
                         <li class="first"><a href="view_statistics_all.php">All Data</a></li>
                         <li><a href="view_statistics_past_seven_days.php">Past 7 days</a></li>
                         <li><a href="view_statistics_last_entry.php">Last Entry</a></li>
-                        <li><a href="#">Entry Selection</a></li>
+                        <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
 
