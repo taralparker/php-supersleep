@@ -59,15 +59,16 @@ INSERT INTO `super_sleep`.`members` VALUES(1, 'test_user', 'test@example.com',
 
 f) add table to store sleep data
 
-CREATE TABLE `super_sleep`.`SleepData` (
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `username` VARCHAR(30) NOT NULL,
-    `month` VARCHAR(10) NOT NULL,
-    `day` INT NOT NULL,
-    `year` INT NOT NULL,
-    `hour` VARCHAR(30) NOT NULL,
-    `min` VARCHAR(30) NOT NULL,
-    `ampm` VARCHAR(2) NOT NULL,
-    `hoursSlept` INT NOT NULL, 
-    `comment` VARCHAR(300),
-) ENGINE = InnoDB;
+CREATE TABLE `sleep_data` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(30) NOT NULL,
+ `month` varchar(10) NOT NULL,
+ `day` int(11) NOT NULL,
+ `year` int(11) NOT NULL,
+ `hour` int(11) NOT NULL,
+ `min` int(11) NOT NULL,
+ `ampm` varchar(2) NOT NULL,
+ `hoursSlept` int(11) NOT NULL,
+ `comment` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
