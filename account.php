@@ -55,7 +55,7 @@ sec_session_start();
                     <h2>Menu</h2>
                     <ul class="style1">
                         <li class="first"><a href="#">New Data</a></li>
-                        <li><a href="#">View Statistics</a></li>
+                        <li><a href="view_statistics.php">View Statistics</a></li>
                         <li><a href="#">View Graphs</a></li>
                         <li><a href="#">Post to Community Thread</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
