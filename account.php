@@ -47,7 +47,7 @@ sec_session_start();
         <div id="page">
             <div id="content">
                 <h2>Past 7 days</h2>
-                <p>Graph of past five days goes here</p>
+                <p>(Graph of past seven days goes here)</p>
                 <p></p>
             </div>
             <div id="sidebar">
