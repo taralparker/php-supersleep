@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tara
- * Date: 3/19/14
- * Time: 3:39 PM
- */
 
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
@@ -19,6 +13,7 @@ sec_session_start();
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+<!-- If the user is logged in then load the page.-->
 <?php if (login_check($mysqli) == true) : ?>
     <html>
     <head>
@@ -46,15 +41,16 @@ sec_session_start();
 
         <div id="page">
             <div id="content">
-                <!-- <h2>Past 7 days</h2> -->
                 <p>
                 <?php
+		    //If there is no constraint set, then open the initial page.
                     if(!isset($_SESSION['constraint']))
                     {
                         echo "<h2> Select data to view. </h2>";
                     }
                     else
                     {
+			//Get constraint, and use it to query the database.
                         $constraint = $_SESSION['constraint'];
                         $_SESSION['constraint'] = NULL;
                         $result = mysqli_query($mysqli, "SELECT * FROM sleep_data WHERE " . $constraint);
@@ -70,6 +66,7 @@ sec_session_start();
                         <th>Comment on Sleep</th>
                         </tr>";
 
+			//While there is more rows of data, output the row to the user.
                         while($row = mysqli_fetch_array($result))
                         {
                             echo "<tr>";
@@ -93,6 +90,7 @@ sec_session_start();
                 <div>
                     <h2>Menu</h2>
                     <ul class="style1">
+			<!-- Selection menu, which allows the user to select which entries to view. -->
                         <li class="first"><a href="view_statistics_all.php">All Data</a></li>
                         <li><a href="view_statistics_past_seven.php">Entries in the Past 7 Days</a></li>
                         <li><a href="view_statistics_last_entry.php">Last Entry</a></li>
@@ -112,6 +110,7 @@ sec_session_start();
     </html>
 <?php else : ?>
     <p>
+	<!--Otherwise an error message is output.-->
         <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
     </p>
 <?php endif; ?>

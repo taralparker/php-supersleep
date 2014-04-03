@@ -15,11 +15,14 @@ sec_session_start();
 <body>
 <?php
     if (login_check($mysqli) == true) :
+        //If the user is logged in, then the constraint is set to be only the username so that all data is selected.
+        //The user is then redirected to "view_statistics.php", where the constraint will be used to query the database.
         $_SESSION['constraint'] = "username='$_SESSION[username]'";
         header('Location: ../view_statistics.php');
     else :
 ?>
     <p>
+        <!--Otherwise an error message is output.-->
         <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
     </p>
 <?php endif; ?>
