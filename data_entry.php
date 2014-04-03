@@ -69,7 +69,7 @@ sec_session_start();
 							Day: 
 							<select id="day" name="day">  
 								<?php
-									for ($day=1; $day<=100; $day++)
+									for ($day=1; $day<=31; $day++)
 									{
 										?>
 											<option value="<?php echo $day;?>"><?php echo $day;?></option>
