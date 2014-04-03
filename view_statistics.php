@@ -96,6 +96,7 @@ sec_session_start();
                         <li class="first"><a href="view_statistics_all.php">All Data</a></li>
                         <li><a href="view_statistics_past_seven.php">Entries in the Past 7 Days</a></li>
                         <li><a href="view_statistics_last_entry.php">Last Entry</a></li>
+                        <li><a href="data_entry.php">New Data</a></li>
                         <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
@@ -104,7 +105,7 @@ sec_session_start();
             </div>
         </div>
         <div id="footer">
-            <p>Developed by Tara Parker, Christopher Reynolds, Matthew Webster.
+            <p>Developed by Tara Parker, Christopher Reynolds, Matthew Webster. Design by FreeCSSTemplates.org.
         </div>
     </div>
     </body>
