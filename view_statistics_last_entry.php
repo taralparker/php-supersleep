@@ -9,7 +9,7 @@ sec_session_start();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Secure Login: Protected Page</title>
+    <title>Super Sleep: View Statistics</title>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>

@@ -9,10 +9,10 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
-
 sec_session_start();
 
-include 'graph_create_past_7.php';
+include 'graph_create_past_30.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,7 @@ include 'graph_create_past_7.php';
         <div id="page">
             <div id="content">
                 <h2>Past 7 days</h2>
-                <p><img src="generated_graphs/past7entries.png" alt="Sleep Graph" width="525" height="285"></p>
+                <p><img src="generated_graphs/past30entries.png" alt="Sleep Graph" width="525" height="285"></p>
                 <p></p>
             </div>
             <div id="sidebar">
@@ -58,9 +58,9 @@ include 'graph_create_past_7.php';
                     <h2>Menu</h2>
                     <ul class="style1">
                         <li class="first"><a href="data_entry.php">New Data</a></li>
-                        <li><a href="view_statistics.php">View Statistics</a></li>
-                        <li><a href="view_graphs.php">View Graphs</a></li>
-                        <li><a href="#">Post to Community Thread</a></li>
+                        <li><a href="view_graphs.php">View Past 7 Entries</a></li>
+                        <li><a href="view_graphs_30.php">View Past 30 Entries</a></li>
+                        <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
 

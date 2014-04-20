@@ -9,7 +9,7 @@ sec_session_start();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Secure Login: Protected Page</title>
+    <title>Super Sleep: View Statistics</title>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -92,7 +92,7 @@ sec_session_start();
                     <ul class="style1">
 			<!-- Selection menu, which allows the user to select which entries to view. -->
                         <li class="first"><a href="view_statistics_all.php">All Data</a></li>
-                        <li><a href="view_statistics_past_seven.php">Entries in the Past 7 Days</a></li>
+                        <li><a href="view_statistics_past_seven.php">Past 7 Entries</a></li>
                         <li><a href="view_statistics_last_entry.php">Last Entry</a></li>
                         <li><a href="data_entry.php">New Data</a></li>
                         <li><a href="account.php">Home</a></li>

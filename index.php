@@ -45,8 +45,8 @@ Released   : 20130111
     <div id="page">
         <div id="content">
             <h2>Welcome to Super Sleep</h2>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+            <p><img src="images/sleep.jpg" alt="Sleep" width="550" height="400"></p>
+            <p> With Super Sleep you can securely record and store your sleep data to help you understand how to improve your sleep. You can track your sleep quality with statistics and graphs and compare your sleep quality to other users on our site. To get started, create an account today.   </p>
             <p></p>
         </div>
         <div id="sidebar">

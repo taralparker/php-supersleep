@@ -9,7 +9,7 @@ sec_session_start();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Secure Login: Protected Page</title>
+    <title>Super Sleep: View Statistics</title>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -34,7 +34,7 @@ sec_session_start();
         {
             //Subtract 1 day from the date and put the components of the result into the three designated arrays.
             $date->sub($dateinterval);
-            $months[$i] = $date->format('F');
+            $months[$i] = $date->format('m');
             $days[$i] = $date->format('j');
             $years[$i] = $date->format('Y');
         }
