@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2014 at 02:59 AM
+-- Generation Time: Apr 30, 2014 at 11:55 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -99,7 +99,9 @@ INSERT INTO `login_attempts` (`user_id`, `time`) VALUES
 (7, '1396311993'),
 (7, '1396311997'),
 (7, '1396312001'),
-(7, '1396312006');
+(7, '1396312006'),
+(7, '1397956555'),
+(7, '1398893249');
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `sleep_data` (
   `hour` int(11) NOT NULL,
   `min` int(11) NOT NULL,
   `ampm` varchar(2) NOT NULL,
-  `hoursSlept` int(11) NOT NULL,
+  `hoursSlept` float NOT NULL,
   `comment` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
