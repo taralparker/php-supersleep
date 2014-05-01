@@ -32,8 +32,18 @@ if (login_check($mysqli) == true)
 		$journal = filter_input(INPUT_POST, 'journal', FILTER_SANITIZE_STRING);
 		$username = htmlentities($_SESSION['username']);
 
+        //Check that the date is valid, return to the data entry page if invalid.
+        if(!checkdate($month,$day,$year))
+        {
+            //Store previous journal entry so that the user does not have to reenter the journal entry.
+            $_SESSION['journalentry'] = $_POST['journal'];
+            $redirectlocation = 'Location: ../data_entry_reload.php';
+        }
+        else{
+            $redirectlocation = 'Location: ../account.php';
+        }
 		//if journal is equal to "Sleep Comments"
-		if (strcasecmp($journal,"Sleep Comments")==0)
+		if (strcasecmp($journal,"Sleep Comments (limit 300 characters)")==0)
 		{
 			//clear journal if text is default
 			$journal = "";
@@ -50,10 +60,10 @@ if (login_check($mysqli) == true)
 			// Execute the prepared query.
 			if (! $insert_stmt->execute())
 			{
-				header('Location: ../error.php?err=Journal failure: INSERT');
+                $redirectlocation = 'Location: ../error.php?err=Journal failure: INSERT';
 			}
 		}
-		header('Location: ../account.php');
+		header($redirectlocation);
 	}
 	else
 	{

@@ -17,7 +17,8 @@ sec_session_start();
 <head>
     <meta charset="UTF-8">
     <title>Super Sleep Journal</title>
-    <script type="text/JavaScript" src="js/forms.js"></script>
+    <script>
+    </script>
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -46,7 +47,7 @@ sec_session_start();
 				</div>
 				<div id="page">
 					<div id="content">
-									
+
 						<form action="data_submit.php" method="post">
 							Month: 
 							<select id="month" name="month">
