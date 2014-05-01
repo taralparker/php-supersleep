@@ -22,6 +22,7 @@ sec_session_start();
     <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
+<!--verifies the user is logged in -->
 <?php if (login_check($mysqli) == true) : ?>
     <html>
 		<head>
@@ -50,11 +51,15 @@ sec_session_start();
 					<h2>Sleep Statistics</h2>
 					
 					<?php
+						/** counts the amount of entries in the database for the selected user*/
 						$query = "SELECT COUNT(hoursSlept) FROM sleep_data WHERE username='$_SESSION[username]' ";
+						//querys the command
 						$result = $mysqli->query($query);
+						//gets the result, and stores
 						$row = $result->fetch_array(); 
 						$totalRows = $row;
 						
+						//-1 to indicate the varible has not been set.
 						$sevenEntryAvgSleepTime = -1;
 						$sevenEntryMinSleepTime = -1;
 						$sevenEntryMaxSleepTime = -1;
@@ -64,6 +69,7 @@ sec_session_start();
 						$thirtyEntryMaxSleepTime = -1;
 						$thirtyEntryAvgFellSleepTime = -1;
 						
+						//if there are more then 7 entries, calculate the 7-entry dependent commands.
 						if( $totalRows['COUNT(hoursSlept)'] >=7)
 						{
 							$query = "SELECT AVG(hoursSlept) FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY CONCAT(year, month, day) DESC LIMIT 7";
@@ -82,13 +88,13 @@ sec_session_start();
 							$sevenEntryMaxSleepTime = $row;
 						
 						}
+						//if there are more then 30 entries, calculate the 30-entry dependent commands.
 						if( $totalRows['COUNT(hoursSlept)'] >=30)
 						{
-							echo "entered 30";
 							$query = "SELECT AVG(hoursSlept) FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY CONCAT(year, month, day) DESC LIMIT 30";
 							$result = $mysqli->query($query);
 							$row = $result->fetch_array(); 
-							$thirtyEntryAvgSleepTime = $result;
+							$thirtyEntryAvgSleepTime = $row;
 							
 							$query = "SELECT MIN(hoursSlept) FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY CONCAT(year, month, day) DESC LIMIT 30";
 							$result = $mysqli->query($query);
@@ -97,7 +103,7 @@ sec_session_start();
 							
 							$query = "SELECT MAX(hoursSlept) FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY CONCAT(year, month, day) DESC LIMIT 30";
 							$result = $mysqli->query($query);
-							$row = $result->fetch_array(); 
+							$row = $result->fetch_array();  
 							$thirtyEntryMaxSleepTime = $row;
 						}
 						
@@ -112,7 +118,7 @@ sec_session_start();
 					</style>
 					
 					
-					<center>
+					<center> <!--print the table containing the statistics information -->
 					<table border="1"  style="width:300px">
 						<tr>
 							<td></td>
@@ -121,7 +127,7 @@ sec_session_start();
 						<tr>
 							<td><b>Total Sleep Entries</b></td>
 							<td>
-								<?php if($totalRows!=-1)
+								<?php if($totalRows!=-1) //if the value isn't -1 (it was calculated) then display it
 								{ echo $totalRows['COUNT(hoursSlept)'];} else echo "Not enough Entries"; ?>
 							</td>
 						</tr>
