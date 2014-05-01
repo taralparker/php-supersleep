@@ -85,20 +85,26 @@ sec_session_start();
                 ?>
                 </p>
                 <p></p>
+                <div id="controlmenu">
+                    <div>
+                        <u2><a href="view_statistics_all.php">All Data</a></u2>
+                        <u2><a href="view_statistics_past_seven.php">Past 7 Entries</a></u2>
+                        <u2><a href="view_statistics_last_entry.php">Last Entry</a></u2>
+                    </div>
+                </div>
             </div>
             <div id="sidebar">
                 <div>
                     <h2>Menu</h2>
                     <ul class="style1">
 			<!-- Selection menu, which allows the user to select which entries to view. -->
-                        <li class="first"><a href="view_statistics_all.php">All Data</a></li>
-                        <li><a href="view_statistics_past_seven.php">Past 7 Entries</a></li>
-                        <li><a href="view_statistics_last_entry.php">Last Entry</a></li>
-                        <li><a href="data_entry.php">New Data</a></li>
+                        <li class="first"><a href="data_entry.php">New Data</a></li>
+                        <li><a href="view_statistics_average.php">View Statistics</a></li>
+                        <li><a href="view_graphs.php">View Graphs</a></li>
+                        <li><a href="#">Post to Community Thread</a></li>
                         <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
-
                 </div>
             </div>
         </div>

@@ -48,7 +48,7 @@ sec_session_start();
         </div>
         <div id="page">
             <div id="content">
-                An invalid date was entered. Please enter a valid date.
+               <p class="error">An invalid date was entered. Please enter a valid date.</p>
                 <form action="data_submit.php" method="post"">
                     Month:
                     <select id="month" name="month"">
@@ -147,10 +147,11 @@ sec_session_start();
                 <div>
                     <h2>Menu</h2>
                     <ul class="style1">
-                        <li class="first"><a href="#">New Data</a></li>
-                        <li><a href="view_statistics.php">View Statistics</a></li>
+                        <li class="first"><a href="view_statistics.php">View Past Data</a></li>
+                        <li><a href="view_statistics_average.php">View Statistics</a></li>
                         <li><a href="view_graphs.php">View Graphs</a></li>
                         <li><a href="#">Post to Community Thread</a></li>
+                        <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
 

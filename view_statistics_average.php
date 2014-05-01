@@ -191,7 +191,6 @@ sec_session_start();
 							<ul class="style1">
 								<li class="first"><a href="data_entry.php">New Data</a></li>
 								<li><a href="view_statistics.php">View Past Data</a></li>
-								<li><a href="view_statistics_average.php">View Statistics</a></li>
 								<li><a href="view_graphs.php">View Graphs</a></li>
 								<li><a href="#">Post to Community Thread</a></li>
 								<li><a href="account.php">Home</a></li>

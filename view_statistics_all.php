@@ -17,7 +17,7 @@ sec_session_start();
     if (login_check($mysqli) == true) :
         //If the user is logged in, then the constraint is set to be only the username so that all data is selected.
         //The user is then redirected to "view_statistics.php", where the constraint will be used to query the database.
-        $_SESSION['constraint'] = "username='$_SESSION[username]'";
+        $_SESSION['constraint'] = "username='$_SESSION[username]' ORDER BY id DESC";
         header('Location: ../view_statistics.php');
     else :
 ?>

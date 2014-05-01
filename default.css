@@ -204,6 +204,17 @@ ul.style1 .first {
 	font-size: 2.25em;
 }
 
+/** CONTROL MENU */
+#controlmenu {
+    overflow: hidden;
+    text-align: center;
+    padding: 1em 1em 0em 1em;
+}
+
+#controlmenu u2 {
+    padding: 0em 2em 0em 2em;
+}
+
 /** BANNER */
 
 #banner

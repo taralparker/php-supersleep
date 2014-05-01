@@ -37,9 +37,11 @@ if (login_check($mysqli) == true)
         {
             //Store previous journal entry so that the user does not have to reenter the journal entry.
             $_SESSION['journalentry'] = $_POST['journal'];
+            $flag = 0;
             $redirectlocation = 'Location: ../data_entry_reload.php';
         }
         else{
+            $flag = 1;
             $redirectlocation = 'Location: ../account.php';
         }
 		//if journal is equal to "Sleep Comments"
@@ -54,7 +56,7 @@ if (login_check($mysqli) == true)
 			$journal = substr($journal, 0,300);
 		}
 		// Insert the new entry into the database
-		if ($insert_stmt = $mysqli->prepare("INSERT INTO sleep_data (username, month, day, year, hour, min, ampm, hoursSlept, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))
+		if ($flag and $insert_stmt = $mysqli->prepare("INSERT INTO sleep_data (username, month, day, year, hour, min, ampm, hoursSlept, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"))
 		{
 			$insert_stmt->bind_param('sssssssss', $username, $month, $day, $year, $hour, $minute, $ampm, $hoursslept, $journal);
 			// Execute the prepared query.
