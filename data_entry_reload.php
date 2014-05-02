@@ -48,7 +48,8 @@ sec_session_start();
         </div>
         <div id="page">
             <div id="content">
-               <p class="error">An invalid date was entered. Please enter a valid date.</p>
+                <!-- Post the error to the user and redisplay the form used to receive a new date for the sleep entry. -->
+                <p class="error">An invalid date was entered. Please enter a valid date.</p>
                 <form action="data_submit.php" method="post"">
                     Month:
                     <select id="month" name="month"">
@@ -67,7 +68,7 @@ sec_session_start();
                     </select>
 
                     <br>
-                    <!-- needs to check how many days in the month -->
+
                     Day:
                     <select id="day" name="day">
                         <?php

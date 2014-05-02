@@ -32,7 +32,7 @@ if (login_check($mysqli) == true)
 		$journal = filter_input(INPUT_POST, 'journal', FILTER_SANITIZE_STRING);
 		$username = htmlentities($_SESSION['username']);
 
-        //Check that the date is valid, return to the data entry page if invalid.
+        //Check that the date is valid, redirect to the data entry reloaded page if invalid.
         if(!checkdate($month,$day,$year))
         {
             //Store previous journal entry so that the user does not have to reenter the journal entry.

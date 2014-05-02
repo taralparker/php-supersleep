@@ -47,7 +47,7 @@ sec_session_start();
 				</div>
 				<div id="page">
 					<div id="content">
-
+                        <!-- Form used to enter sleep data. Data submit checks that the date is valid.  -->
 						<form action="data_submit.php" method="post">
 							Month: 
 							<select id="month" name="month">
@@ -66,7 +66,7 @@ sec_session_start();
 							</select>    
 								
 							<br>
-							<!-- needs to check how many days in the month -->
+
 							Day: 
 							<select id="day" name="day">  
 								<?php
