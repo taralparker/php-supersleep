@@ -2,22 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Tara
- * Date: 3/19/14
- * Time: 3:33 PM
+ * Date: 5/8/14
+ * Time: 5:39 PM
  */
-
 ?>
-<html>
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-
-Name       : Portraiture
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20130111
--->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,9 +32,8 @@ Released   : 20130111
 
     <div id="page">
         <div id="content">
-            <h2>Welcome to Super Sleep</h2>
-            <p><img src="images/sleep.jpg" alt="Sleep" width="550" height="400"></p>
-            <p> With Super Sleep you can securely record and store your sleep data to help you understand how to improve your sleep. You can track your sleep quality with statistics and graphs and compare your sleep quality to other users on our site. To get started, create an account today.   </p>
+            <h2>Success</h2>
+            <p> Thank you for contacting Super Sleep. We will be in touch with you very soon. </p>
             <p></p>
         </div>
         <div id="sidebar">
@@ -55,7 +42,7 @@ Released   : 20130111
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
-                    <li><a href='contact.php'>Contact Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
 
             </div>
