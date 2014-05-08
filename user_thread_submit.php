@@ -9,7 +9,8 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
-sec_session_start(); // Our custom secure way of starting a PHP session.
+//custom session validator
+sec_session_start();
 
 //if logged in
 if (login_check($mysqli) == true)

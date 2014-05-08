@@ -7,14 +7,13 @@
  */
 if(isset($_POST['email'])) {
 
-    // CHANGE THE TWO LINES BELOW
     $email_to = "softwareengineeringproject14@gmail.com";
 
     $email_subject = "Super Sleep Contact";
 
 
     function died($error) {
-        // your error code can go here
+        // error message
         echo "We are very sorry, but there were error(s) found with the form you submitted. ";
         echo "These errors appear below.<br /><br />";
         echo $error."<br /><br />";
@@ -74,12 +73,8 @@ if(isset($_POST['email'])) {
         'Reply-To: '.$email_from."\r\n" .
         'X-Mailer: PHP/' . phpversion();
     @mail($email_to, $email_subject, $email_message, $headers);
-    ?>
 
-    <?php header('Location: ../contact_success.php');?>
+    header('Location: ../contact_success.php');
 
-
-<?php
 }
-die();
-?>
+die(); ?>

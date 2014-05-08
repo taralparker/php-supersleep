@@ -26,7 +26,7 @@
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -34,11 +34,13 @@
 
     <div id="page">
         <div id="content">
+            <!-- Displayes failed login attempt message to user -->
             <h2>Login Failed</h2>
             <p>Please try again. <a href="login.php">Login</a></p>
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Tara
- * Date: 3/19/14
- * Time: 3:33 PM
+ * Date: 5/8/14
+ * Time: 5:33 PM
  */
 
 ?>
@@ -26,7 +26,7 @@
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Contact Us</span>
         </div>
     </div>
@@ -35,6 +35,7 @@
     <div id="page">
         <div id="content">
             <h2></h2>
+            <!-- Contact form for users to send name, email, phone, and a comment/message -->
             <form name="htmlform" method="post" action="contact_submit.php">
                 <table width="450px">
                     </tr>
@@ -92,6 +93,7 @@
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

@@ -26,7 +26,7 @@
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -34,11 +34,13 @@
 
     <div id="page">
         <div id="content">
+            <!-- Display a message to the user that the registration was successful and request user to log in -->
             <h1>Registration Successful</h1>
             <p>You can now go back to the <a href="index.php">login page</a> and log in.</p>
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

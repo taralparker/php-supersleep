@@ -9,8 +9,10 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
+//custom session validator
 sec_session_start();
 
+//Including this file updates the graph
 include 'graph_create_past_7.php';
 
 ?>
@@ -41,7 +43,7 @@ include 'graph_create_past_7.php';
     <div id="wrapper" class="container">
         <div id="header">
             <div id="logo">
-                <h1><a href="#">Super Sleep</a></h1>
+                <h1><a href="index.php">Super Sleep</a></h1>
                 <span><p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p></span>
             </div>
         </div>
@@ -50,9 +52,11 @@ include 'graph_create_past_7.php';
         <div id="page">
             <div id="content">
                 <h2>Past 7 days</h2>
+                <!-- Show the graph of the past 7 user entries -->
                 <p><img src="generated_graphs/past7entries.png" alt="Sleep Graph" width="525" height="285"></p>
                 <p></p>
                 <div id="controlmenu">
+                    <!-- Select to view 7 or 30 entries at a time -->
                     <div>
                         <u2><a href="view_graphs.php">View Past 7 Entries</a></u2>
                         <u2><a href="view_graphs_30.php">View Past 30 Entries</a></u2>
@@ -61,6 +65,7 @@ include 'graph_create_past_7.php';
             </div>
             <div id="sidebar">
                 <div>
+                    <!-- Sidebar navigation menu -->
                     <h2>Menu</h2>
                     <ul class="style1">
                         <li class="first"><a href="data_entry.php">New Data</a></li>

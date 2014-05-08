@@ -30,7 +30,7 @@ include_once 'includes/functions.php';
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -46,6 +46,7 @@ include_once 'includes/functions.php';
             }
             ?>
             <ul>
+                <!-- Display to the user the registration constraints -->
                 <li>Usernames may contain only digits, upper and lower case letters and underscores</li>
                 <li>Emails must have a valid email format</li>
                 <li>Passwords must be at least 6 characters long</li>
@@ -59,6 +60,7 @@ include_once 'includes/functions.php';
                 <li>Your password and confirmation must match exactly</li>
                 <br>
             </ul>
+            <!-- Form for user to create account -->
             <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>"
                   method="post"
                   name="registration_form">
@@ -84,6 +86,7 @@ include_once 'includes/functions.php';
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

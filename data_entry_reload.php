@@ -42,7 +42,7 @@ sec_session_start();
     <div id="wrapper" class="container">
         <div id="header">
             <div id="logo">
-                <h1><a href="#">Super Sleep</a></h1>
+                <h1><a href="index.php">Super Sleep</a></h1>
                 <span><p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p></span>
             </div>
         </div>

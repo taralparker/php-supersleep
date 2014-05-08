@@ -11,7 +11,7 @@
     $array = array();
     //SQL query to get last 7 entries of sleep time data
     $query = "SELECT CONCAT(month, '/', day, '/', year), hoursSlept FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY year DESC, month DESC, day DESC LIMIT 7";
-    //$query = "SELECT CONCAT(month, '/', day, '/', year), hoursSlept FROM sleep_data WHERE username='$_SESSION[username]' ORDER BY CONCAT(year, month, day) DESC LIMIT 7";
+
     $result = $mysqli->query($query);
 
 

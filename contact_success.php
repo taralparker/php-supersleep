@@ -12,7 +12,7 @@
     <meta charset="UTF-8" />
     <meta name="google" content="notranslate">
     <meta http-equiv="Content-Language" content="en" />
-    <title>Super Sleep</title>
+    <title>Super Sleep: Success</title>
 
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 
@@ -24,7 +24,7 @@
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -32,12 +32,14 @@
 
     <div id="page">
         <div id="content">
+            <!-- Message indicating the contact us message was recieved -->
             <h2>Success</h2>
             <p> Thank you for contacting Super Sleep. We will be in touch with you very soon. </p>
             <p></p>
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

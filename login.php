@@ -10,8 +10,10 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
+//custom session validator
 sec_session_start();
 
+//Check to see if a user is currently logged in
 if (login_check($mysqli) == true)
 {
     $logged = 'in';
@@ -42,7 +44,7 @@ else
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -58,6 +60,7 @@ else
                 echo '<p class="error">Error Logging In!</p>';
             }
             ?>
+            <!-- Display form for user login information -->
             <form action="includes/process_login.php" method="post" name="login_form">
                 Email:     <input type="text" name="email" />
                 Password: <input type="password"
@@ -75,6 +78,7 @@ else
 </div>
 <div id="sidebar">
     <div>
+        <!-- Sidebar navigation menu -->
         <h2>Improve your sleep</h2>
         <ul class="style1">
             <li class="first"><a href="login.php">Login</a></li>

@@ -36,7 +36,7 @@ Released   : 20130111
 <div id="wrapper" class="container">
     <div id="header">
         <div id="logo">
-            <h1><a href="#">Super Sleep</a></h1>
+            <h1><a href="index.php">Super Sleep</a></h1>
             <span>Get the sleep you deserve</span>
         </div>
     </div>
@@ -45,12 +45,14 @@ Released   : 20130111
     <div id="page">
         <div id="content">
             <h2>Welcome to Super Sleep</h2>
+            <!-- Stock image so users trust us :P -->
             <p><img src="images/sleep.jpg" alt="Sleep" width="550" height="400"></p>
             <p> With Super Sleep you can securely record and store your sleep data to help you understand how to improve your sleep. You can track your sleep quality with statistics and graphs and compare your sleep quality to other users on our site. To get started, create an account today.   </p>
             <p></p>
         </div>
         <div id="sidebar">
             <div>
+                <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
                     <li class="first"><a href="login.php">Login</a></li>

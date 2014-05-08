@@ -10,6 +10,7 @@
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
+//custom session validator
 sec_session_start();
 
 ?>
@@ -28,7 +29,7 @@ sec_session_start();
         <meta charset="UTF-8" />
         <meta name="google" content="notranslate">
         <meta http-equiv="Content-Language" content="en" />
-        <title>Community Thread</title>
+        <title>Super Sleep: Community Thread</title>
 
         <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 
@@ -40,7 +41,7 @@ sec_session_start();
     <div id="wrapper" class="container">
         <div id="header">
             <div id="logo">
-                <h1><a href="#">Super Sleep</a></h1>
+                <h1><a href="index.php">Super Sleep</a></h1>
                 <span><p>Welcome <?php echo htmlentities($_SESSION['username']); ?>!</p></span>
             </div>
         </div>
@@ -89,6 +90,7 @@ sec_session_start();
             </div>
             <div id="sidebar">
                 <div>
+                    <!-- Sidebar navigation menu -->
                     <h2>Menu</h2>
                     <ul class="style1">
                         <li class="first"><a href="data_entry.php">New Data</a></li>
