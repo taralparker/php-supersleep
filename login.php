@@ -77,7 +77,8 @@ else
     <div>
         <h2>Improve your sleep</h2>
         <ul class="style1">
-            <li class = first><a href="register.php">Register</a></li>
+            <li class="first"><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
             <li><a href='contact.php'>Contact Us</a></li>
         </ul>
 

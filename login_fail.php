@@ -8,16 +8,6 @@
 
 ?>
 <html>
-<!--
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-
-Name       : Portraiture
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20130111
--->
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,7 +41,8 @@ Released   : 20130111
             <div>
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
-                    <li class = first><a href="register.php">Register</a></li>
+                    <li class="first"><a href="login.php">Login</a></li>
+                    <li><a href="register.php">Register</a></li>
                     <li><a href='contact.php'>Contact Us</a></li>
                 </ul>
 
