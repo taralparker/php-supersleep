@@ -198,7 +198,7 @@ sec_session_start();
 								<li class="first"><a href="data_entry.php">New Data</a></li>
 								<li><a href="view_statistics.php">View Past Data</a></li>
 								<li><a href="view_graphs.php">View Graphs</a></li>
-								<li><a href="#">Post to Community Thread</a></li>
+								<li><a href="user_thread.php">Post to Community Thread</a></li>
 								<li><a href="account.php">Home</a></li>
 								<li><a href="includes/logout.php">Logout</a></li>
 							</ul>

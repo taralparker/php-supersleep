@@ -2,17 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Tara
- * Date: 3/19/14
- * Time: 3:39 PM
+ * Date: 5/8/14
+ * Time: 1:38 PM
  */
+
 
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
-
 sec_session_start();
 
-include 'graph_create_past_7.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +28,7 @@ include 'graph_create_past_7.php';
         <meta charset="UTF-8" />
         <meta name="google" content="notranslate">
         <meta http-equiv="Content-Language" content="en" />
-        <title>Super Sleep</title>
+        <title>Community Thread</title>
 
         <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 
@@ -49,9 +48,44 @@ include 'graph_create_past_7.php';
 
         <div id="page">
             <div id="content">
-                <h2>Past 7 days</h2>
-                <p><img src="generated_graphs/past7entries.png" alt="Sleep Graph" width="525" height="285"></p>
-                <p></p>
+                <h2>Community Thread</h2>
+<?php
+                //Get all comments from the databases, order them by timestamp
+                $result = mysqli_query($mysqli, "SELECT * FROM user_comments ORDER BY timestamp");
+
+                echo "<table border='1'>
+                    <tr>
+                        <th>User</th>
+                        <th>Time</th>
+                        <th>Comment</th>
+
+                    </tr>";
+
+                    //While there is more rows of data, output the row to the user.
+                    while($row = mysqli_fetch_array($result))
+                    {
+                    echo "<tr>";
+                        echo "<td>" . $row['username'] . "</td>";
+                        echo "<td>" . $row['timestamp'] . "</td>";
+                        echo "<td>" . $row['comment'] . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+?>
+                <br>
+                <br>
+                <br>
+                <!-- Text box for user to submit a comment to the community thread-->
+                <h3>Submit a Comment:</h3>
+                <form action="user_thread_submit.php" method="post">
+                    <textarea rows="4" cols="50" maxlength="300" id="user_comment"name = "user_comment">Comments (limit 300 characters)</textarea>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="submit"/>
+                </form>
+
+
             </div>
             <div id="sidebar">
                 <div>
@@ -61,7 +95,7 @@ include 'graph_create_past_7.php';
                         <li><a href="view_statistics.php">View Past Data</a></li>
                         <li><a href="view_statistics_average.php">View Statistics</a></li>
                         <li><a href="view_graphs.php">View Graphs</a></li>
-                        <li><a href="user_thread.php">Post to Community Thread</a></li>
+                        <li><a href="account.php">Home</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
                     </ul>
 
