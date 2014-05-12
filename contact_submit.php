@@ -69,6 +69,7 @@ if(isset($_POST['email'])) {
 
 
 // create email headers
+    //NOTE: email does not currently send since we do not have a live server to send mail from.
     $headers = 'From: '.$email_from."\r\n".
         'Reply-To: '.$email_from."\r\n" .
         'X-Mailer: PHP/' . phpversion();
