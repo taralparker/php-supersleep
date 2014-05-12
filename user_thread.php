@@ -52,9 +52,14 @@ sec_session_start();
                 <h2>Community Thread</h2>
 <?php
                 //Get all comments from the databases, order them by timestamp
-                $result = mysqli_query($mysqli, "SELECT * FROM user_comments ORDER BY timestamp");
+                $result = mysqli_query($mysqli, "SELECT * FROM user_comments ORDER BY timestamp DESC LIMIT 50");
 
-                echo "<table border='1'>
+                echo "<style>
+						//.tableCSS { word-break: break-all; }
+						td {max-width:400px;word-wrap:break-word;}
+					</style>
+					
+					<table border='1' class='tableCSS'>
                     <tr>
                         <th>User</th>
                         <th>Time</th>
