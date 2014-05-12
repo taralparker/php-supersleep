@@ -66,6 +66,7 @@ include 'graph_create_past_7.php';
                         <li><a href="view_graphs.php">View Graphs</a></li>
                         <li><a href="user_thread.php">Post to Community Thread</a></li>
                         <li><a href="includes/logout.php">Logout</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
                     </ul>
 
                 </div>
