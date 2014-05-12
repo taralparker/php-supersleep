@@ -105,7 +105,8 @@ sec_session_start();
                     <li><a href="register.php">Register</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
 				<?php else : ?>
-					<li class="first"><a href="data_entry.php">New Data</a></li>
+					<li class="first"><a href="account.php">Home</a></li>
+                    <li><a href="data_entry.php">New Data</a></li>
 					<li><a href="view_statistics.php">View Past Data</a></li>
 					<li><a href="view_statistics_average.php">View Statistics</a></li>
 					<li><a href="view_graphs.php">View Graphs</a></li>
