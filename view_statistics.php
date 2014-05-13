@@ -65,7 +65,13 @@ sec_session_start();
                         $constraint = $_SESSION['constraint'];
                         $_SESSION['constraint'] = NULL;
                         $result = mysqli_query($mysqli, "SELECT * FROM sleep_data WHERE " . $constraint);
-                        echo "<table border='1'>
+                        //echo "<table border='1'>
+                        echo "<style>
+                            //.tableCSS { word-break: break-all; }
+                            td {max-width:175px;word-wrap:break-word;}
+					    </style>
+
+					    <table border='1' class='tableCSS'>
                         <tr>
                         <th>Month</th>
                         <th>Day</th>
@@ -80,6 +86,9 @@ sec_session_start();
 
                         //While there is more rows of data, output the row to the user. Also output a delete button so
                         //the user may delete entries.
+
+
+
                         while($row = mysqli_fetch_array($result))
                         {
                             echo "<tr>";
@@ -136,7 +145,7 @@ sec_session_start();
 <?php else : ?>
     <p>
         <!--Otherwise an error message is output.-->
-        <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+        <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
     </p>
 <?php endif; ?>
 </body>

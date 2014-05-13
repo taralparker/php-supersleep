@@ -26,7 +26,7 @@ else :
     ?>
     <p>
         <!--Otherwise output an error message.-->
-        <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+        <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
     </p>
 <?php endif; ?>
 </body>
