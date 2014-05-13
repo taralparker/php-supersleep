@@ -42,8 +42,8 @@ sec_session_start();
         <div id="page">
             <div id="content">
                 <p>
-                <?php
-		    //If there is no constraint set, then open the initial page.
+                    <?php
+                    //If there is no constraint set, then open the initial page.
                     if(!isset($_SESSION['constraint']))
                     {
                         //If the delerr variable is set, then post an error message to the user along with the header.
@@ -61,7 +61,7 @@ sec_session_start();
                     }
                     else
                     {
-			            //Get constraint, and use it to query the database.
+                        //Get constraint, and use it to query the database.
                         $constraint = $_SESSION['constraint'];
                         $_SESSION['constraint'] = NULL;
                         $result = mysqli_query($mysqli, "SELECT * FROM sleep_data WHERE " . $constraint);
@@ -78,7 +78,7 @@ sec_session_start();
                         <th>Delete Entry</th>
                         </tr>";
 
-			            //While there is more rows of data, output the row to the user. Also output a delete button so
+                        //While there is more rows of data, output the row to the user. Also output a delete button so
                         //the user may delete entries.
                         while($row = mysqli_fetch_array($result))
                         {
@@ -101,7 +101,7 @@ sec_session_start();
                         }
                         echo "</table>";
                     }
-                ?>
+                    ?>
                 </p>
                 <p></p>
                 <div id="controlmenu">
@@ -116,7 +116,7 @@ sec_session_start();
                 <div>
                     <h2>Menu</h2>
                     <ul class="style1">
-			<!-- Selection menu, which allows the user to select which entries to view. -->
+                        <!-- Selection menu, which allows the user to select which entries to view. -->
                         <li class="first"><a href="data_entry.php">New Data</a></li>
                         <li><a href="view_statistics_average.php">View Statistics</a></li>
                         <li><a href="view_graphs.php">View Graphs</a></li>
@@ -135,7 +135,7 @@ sec_session_start();
     </html>
 <?php else : ?>
     <p>
-	<!--Otherwise an error message is output.-->
+        <!--Otherwise an error message is output.-->
         <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
     </p>
 <?php endif; ?>

@@ -51,8 +51,23 @@ sec_session_start();
             <div id="content">
                 <h2>Community Thread</h2>
 <?php
-                //Get all comments from the databases, order them by timestamp
-                $result = mysqli_query($mysqli, "SELECT * FROM user_comments ORDER BY timestamp DESC LIMIT 50");
+                //If the page number is set, then set the variable pagenum to the page number. Otherwise, set the page
+                //number to 0.
+                if(isset($_SESSION['pagenum']))
+                {
+                    $pagenum = $_SESSION['pagenum'];
+                }
+                else
+                {
+                    $_SESSION['pagenum'] = 0;
+                    $pagenum = 0;
+                }
+
+                //Multiply the page number by 50 to get the entry number in the database.
+                $entrynum = $pagenum * 50;
+
+                //Get 50 comments from the database, order them by timestamp
+                $result = mysqli_query($mysqli, "SELECT * FROM user_comments ORDER BY timestamp DESC LIMIT " . $entrynum . ",50");
 
                 echo "<style>
 						//.tableCSS { word-break: break-all; }
@@ -67,10 +82,12 @@ sec_session_start();
 
                     </tr>";
 
+                    $index = 0;
                     //While there is more rows of data, output the row to the user.
                     while($row = mysqli_fetch_array($result))
                     {
-                    echo "<tr>";
+                        $index = $index + 1;
+                        echo "<tr>";
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['timestamp'] . "</td>";
                         echo "<td>" . $row['comment'] . "</td>";
@@ -78,6 +95,20 @@ sec_session_start();
                     }
                     echo "</table>";
 ?>
+                <!-- Display the page number and navigation options, use the last and next page functions to navigate
+                the database. -->
+                Page number <?php echo $_SESSION['pagenum']; ?>
+                <div id="controlmenu">
+                    <div>
+                        <?php if($_SESSION['pagenum'] > 0) : ?>
+                        <u2><a href="user_thread_last_page.php">Previous Page</a></u2>
+                        <?php endif; ?>
+                        <?php if($index == 50) : ?>
+                        <u2><a href="user_thread_next_page.php">Next Page</a></u2>
+                        <?php endif; ?>
+                    </div>
+                </div>
+
                 <br>
                 <br>
                 <br>
