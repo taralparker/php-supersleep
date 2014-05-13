@@ -46,11 +46,22 @@ sec_session_start();
 		    //If there is no constraint set, then open the initial page.
                     if(!isset($_SESSION['constraint']))
                     {
-                        echo "<h2> Select data to view. </h2>";
+                        //If the delerr variable is set, then post an error message to the user along with the header.
+                        //Otherwise just post the header.
+                        if(isset($_SESSION['delerr']))
+                        {
+                            $_SESSION['delerr'] = NULL;
+                            echo "<h2> Select data to view. </h2>";
+                            echo "<span class='error'>The selected entry could not be deleted.</span>";
+                        }
+                        else
+                        {
+                            echo "<h2> Select data to view. </h2>";
+                        }
                     }
                     else
                     {
-			//Get constraint, and use it to query the database.
+			            //Get constraint, and use it to query the database.
                         $constraint = $_SESSION['constraint'];
                         $_SESSION['constraint'] = NULL;
                         $result = mysqli_query($mysqli, "SELECT * FROM sleep_data WHERE " . $constraint);
@@ -64,9 +75,11 @@ sec_session_start();
                         <th>AM/PM</th>
                         <th>Number of Hours Slept</th>
                         <th>Comment on Sleep</th>
+                        <th>Delete Entry</th>
                         </tr>";
 
-			//While there is more rows of data, output the row to the user.
+			            //While there is more rows of data, output the row to the user. Also output a delete button so
+                        //the user may delete entries.
                         while($row = mysqli_fetch_array($result))
                         {
                             echo "<tr>";
@@ -78,6 +91,12 @@ sec_session_start();
                             echo "<td>" . $row['ampm'] . "</td>";
                             echo "<td>" . $row['hoursSlept'] . "</td>";
                             echo "<td>" . $row['comment'] . "</td>";
+                            echo "<td>";
+                            echo "<form action='delete_entry.php' method='post'>";
+                            echo "<input type='hidden' name='id' value=" . $row['id'] . ">";
+                            echo "<input type='submit' name='submit' value='Delete'>";
+                            echo "</form>";
+                            echo "</td>";
                             echo "</tr>";
                         }
                         echo "</table>";
