@@ -1,10 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Tara
+ * User: Tara, Matt
  * Date: 5/8/14
  * Time: 5:39 PM
  */
+ 
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+
+sec_session_start();
+ 
+ 
 ?>
 
 <head>
@@ -42,9 +49,19 @@
                 <!-- Sidebar navigation menu -->
                 <h2>Improve your sleep</h2>
                 <ul class="style1">
+                <?php if (login_check($mysqli) == false) : ?>
                     <li class="first"><a href="login.php">Login</a></li>
                     <li><a href="register.php">Register</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
+				<?php else : ?>
+					<li class="first"><a href="account.php">Home</a></li>
+					<li><a href="data_entry.php">New Data</a></li>
+					<li><a href="view_statistics.php">View Past Data</a></li>
+					<li><a href="view_statistics_average.php">View Statistics</a></li>
+					<li><a href="view_graphs.php">View Graphs</a></li>
+					<li><a href="user_thread.php">Post to Community Thread</a></li>
+					<li><a href="includes/logout.php">Logout</a></li>
+				<?php endif; ?>
                 </ul>
 
             </div>
